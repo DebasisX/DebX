@@ -8,9 +8,9 @@ async def process_and_respond(text):
   """
   Asynchronous function to call OpenAI API and handle response.
   """
-  if not os.environ.get('OPENAI_API_KEY'):   #AIzaSyCL6z0Cfo5OjszrjHD3uKcOyyuZ0SYVoo8    GEMINI
+  if not os.environ.get('OPENAI_API_KEY'):   
       raise ValueError("Missing API key. Please set the environment variable 'OPENAI_API_KEY'.")
-  client = AsyncOpenAI(api_key=os.environ.get('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'))
+  client = AsyncOpenAI(api_key=os.environ.get('Your API Key'))
   response_text = await client.chat.completions.create(model="gpt-3.5-turbo", messages=[{"role": "user", "content": text}])
   # Access the first response text
   return response_text.choices[0].text 
