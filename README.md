@@ -10,8 +10,9 @@
  (An MP3 Player to hear Gemini)
 
  # Python Libraries:
- openai
- gtts
- speech_recognition
+ openai,
+ gtts,
+ speech_recognition,
  google.generativeai
+
 You can use playsound library also if you seem to have a problem with default MP3 player.
