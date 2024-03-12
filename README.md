@@ -14,4 +14,4 @@
  gtts
  speech_recognition
  google.generativeai
- # You can use playsound library also if you seem to have a probloem with default MP3 player.
+You can use playsound library also if you seem to have a problem with default MP3 player.
