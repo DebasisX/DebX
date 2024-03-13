@@ -31,6 +31,7 @@ while True:
 
                 try:
                     text = recognizer.recognize_google(audio)
+                    print("You asked: " + text)
                     if text.lower() == "stop":
                         sys.exit(0)
 
