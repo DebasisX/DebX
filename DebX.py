@@ -4,7 +4,7 @@ import os, sys
 import google.generativeai as genai
 
 # Configure GenerativeAI model
-genai.configure(api_key="Your API Key")
+genai.configure(api_key="Paste in your API Key!")
 model = genai.GenerativeModel('gemini-pro')
 
 # Define speech rate
@@ -12,6 +12,15 @@ speech_rate = 180
 
 engine = pyttsx3.init()
 engine.setProperty('rate', speech_rate)  # Set speech rate once
+def read_until(char='\n'):
+    buffer = ''
+    while True:
+        chunk = os.read(sys.stdin.fileno(), 2048).decode('utf-8')
+        buffer += chunk
+        if char in buffer:
+            return buffer
+
+
 
 while True:
     print("Ask me anything!")
@@ -51,20 +60,32 @@ while True:
                     engine.runAndWait()
 
             else: 
-                print("Write now..")
+                print("Write code or query..")
                 text = str(input())
-                if text.lower() == "stop":
-                    sys.exit(0)
-
-                response = model.generate_content(text)
-                print(response.text)
-                print("Do you want me to say this?")
-                engine.say("Would you like to hear my response.")
-                engine.runAndWait()
-                z = str(input(""))
-                if z.lower() == "y":
-                    engine.say(response.text)
+                if text == "code":
+                    text = read_until("###")
+                    response = model.generate_content(text)
+                    print(response.text)
+                    print("Do you want me to say this?")
+                    engine.say("Would you like to hear my response.")
                     engine.runAndWait()
+                    z = str(input(""))
+                    if z.lower() == "y":
+                        engine.say(response.text)
+                        engine.runAndWait()
+                else:
+                    if text.lower() == "stop":
+                        sys.exit(0)
+
+                    response = model.generate_content(text)
+                    print(response.text)
+                    print("Do you want me to say this?")
+                    engine.say("Would you like to hear my response.")
+                    engine.runAndWait()
+                    z = str(input(""))
+                    if z.lower() == "y":
+                        engine.say(response.text)
+                        engine.runAndWait()
 
         else:
             print("Use W or S")

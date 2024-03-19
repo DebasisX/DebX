@@ -1,5 +1,15 @@
 # DebX
  Gemini can now speak to you and hear you. You can now ask your queries directly with voice and Gemini will provide answers in VOICE.   (Also has TEXT support)
+ To paste in stuff.. press W then write code and Press Enter, then you can ask your query along with pasted code or some other text then end your query with '###'.
+ Example: 
+ Ask me Anything!
+ W
+ Write Now..
+ code
+ // Paste whatever you want
+ ###
+ Result will be generated.
+ 
  Double-Click on sara.exe to Launch directly on your Terminal.
 
 # Dependancies:
