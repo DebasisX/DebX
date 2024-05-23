@@ -1,16 +1,40 @@
 # DebX
  Gemini can now speak to you and hear you. You can now ask your queries directly with voice and Gemini will provide answers in VOICE.   (Also has TEXT support)
  To paste in stuff.. press W then write code and Press Enter, then you can ask your query along with pasted code or some other text then end your query with '###'.
- Example: 
+Example 1 (To paste in stuff or some code along with your query, i.e. anything with multi-line input): 
  Ask me Anything!
  W
  Write Now..
- code
+ write "code" then press Enter. 
  // Paste whatever you want
  ###
+ Enter.
  Result will be generated.
+ Do you want to hear my response.
+ Enter Y/N.
+ It will speak the response.
+
+Example 2 (To just ask a single line of query)
+ Ask me Anything!
+ W
+ Write Now..
+ // write your query 
+ Enter.
+ Result will be generated.
+ Do you want to hear my response.
+ Enter Y/N.
+ It will speak the response.
+
+Example 3 (To speak and get a reply in voice)
+ Ask me anything!
+ s (Press)
+ Enter.
+ Speak Now..
+ You asked: what do you do?
+ I am Gemini, a large multimodal model, trained by Google. My purpose is to help people with a wide range of writing-related tasks, such as answering questions, generating text, translating languages, and writing 
+ different kinds of creative content.
  
- Double-Click on sara.exe to Launch directly on your Terminal.
+ Double-Click on DebX.exe to Launch directly on your Terminal. If you face any issue Use Ctrl + C to terminate. It will throw an Interrupt and process will be restarted.
 
 # Dependancies:
  Python 3.10
